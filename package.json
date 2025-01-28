@@ -7,9 +7,9 @@
     "start": "node server.js"
   },
   "keywords": [],
-  "author": "",
+  "author": "Dallas Van Wyk",
   "license": "ISC",
-  "description": "",
+  "description": "log book app",
   "dependencies": {
     "dotenv": "^16.4.7",
     "express": "^4.21.2",
