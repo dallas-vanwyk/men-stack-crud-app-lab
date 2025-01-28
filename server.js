@@ -16,7 +16,8 @@ const mongoose = require('mongoose');
 // define port variable
 const port = 3002;
 
-
+// import lognote model
+const LogNote = require('./models/lognote.js');
 
 // ------------------------------------------------------- Middleware
 
