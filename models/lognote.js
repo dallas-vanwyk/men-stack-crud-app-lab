@@ -5,7 +5,6 @@ const mongoose = require('mongoose');
 // create schema
 const logNoteSchema = new mongoose.Schema({
     name: String,
-    id: Number,
     date: Date,
     description: String,
     author: String,
@@ -15,6 +14,10 @@ const logNoteSchema = new mongoose.Schema({
     isIR: Boolean,
     isMIR3: Boolean,
     sendEmail: Boolean,
+    isCallRecording: Boolean,
+    isScadaInput: Boolean,
+    isScadaAlarm: Boolean,
+    isSBI: Boolean,
 });
 
 // create model
