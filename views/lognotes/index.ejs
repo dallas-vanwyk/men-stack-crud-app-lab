@@ -1,0 +1,35 @@
+<!-- views/lognotes/index.ejs -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+    <title>LogNotes Index</title>
+</head>
+
+<body>
+    
+    <div class="index-header-div">
+        <h1>All Log Notes</h1>
+        <a class="add-lognote" href="/lognotes/new">New Log</a>
+    </div>
+
+    <ul>
+        <% logNotes.forEach((log) => { %>
+            <li>
+                <a class="lognote-card" href="/lognotes/<%=log._id%>">
+                    <!-- need to adjust this for what I want to display -->
+                    <%= log.name %> 
+                </a>
+            </li>
+        <% }) %>
+    </ul>
+
+    <!-- navigation partial -->
+
+</body>
+
+</html>
