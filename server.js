@@ -13,6 +13,11 @@ dotenv.config();
 // add Mongoose
 const mongoose = require('mongoose');
 
+// add middleware
+const methodOverride = require("method-override");
+const morgan = require("morgan");
+const path = require('path');
+
 // define port variable
 const port = 3002;
 
@@ -23,6 +28,7 @@ const LogNote = require('./models/lognote.js');
 
 // connect to database
 mongoose.connect(process.env.MONGODB_URI);
+
 // log connection status to terminal on start
 mongoose.connection.on('connected', () => {
     console.log(`Connected to MongoDB ${mongoose.connection.name}`);
@@ -31,11 +37,16 @@ mongoose.connection.on('connected', () => {
 
 // ------------------------------------------------------- Routes
 
-// INDUCES
+// Home
+app.get("/", async (req, res) => {
+    res.render('home.ejs');
+});
+
+// I N D U C E S
 
 // Index
-// GET / test route
-app.get("/", async (req, res) => {
+app.get("/lognotes", async (req, res) => {
+
     res.render('index.ejs');
 });
 
