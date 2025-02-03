@@ -1,0 +1,46 @@
+<!-- views/lognotes/edit.ejs -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+    <!-- could make dynamic title, idk -->
+    <title>
+        Edit Log <!-- log note ID # ? -->
+    </title>
+</head>
+
+<body>
+
+    <!-- insert navigation partial here -->
+
+    <h1>Edit <%= logNote.name %></h1>
+
+    <form action="/lognotes/<%=logNote._id%>?_method=PUT" method="POST">
+        <label for="name">Name:</label>
+        <input type="text" name="name" id="name" value="<%= logNote.name %>" />
+
+
+
+        <!-- whole entire form for creating a log note -->
+
+        <!-- <div class="checkbox-div">
+            <label for="ready-to-eat">Ready to Eat?</label>
+            <input type="checkbox" name="isReadyToEat" id="ready-to-eat" 
+            <%  // if (fruit.isReadyToEat) { %>checked<% // } %>
+            />
+        </div> -->
+
+        <button type="submit">Save updated Log</button>
+    </form>
+
+    <a class="lognotess-index-link" href="/lognotes">
+        <div class="index-link-text">View All Log Notes</div>
+    </a>
+
+</body>
+
+</html>

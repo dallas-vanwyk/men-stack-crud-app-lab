@@ -1,0 +1,56 @@
+<!-- views/lognotes/show.ejs -->
+
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+    <!-- may want to adjust page title; tbd -->
+    <title>Log <%= logNote.name %></title>
+</head>
+
+<body>
+    
+    <!-- navigation partial -->
+
+    <div class="lognote-details">
+
+        <h1>
+            <%= logNote.name %>
+        </h1>
+
+        <!-- add rest of log note details -->
+         <!-- add conditional rendering based on log note parameters -->
+
+        <div class="lognote-actions">
+            <form 
+                class='delete-form'
+                action="/lognotes/<%=logNote._id%>?_method=DELETE"
+                method='POST'
+            >
+
+                <button class="delete-button" type="submit">
+                    Delete log note
+                </button>
+
+            </form>
+
+            <a class='edit-link' href="/lognotes/<%=logNote._id%>/edit">
+                <div class="edit-text">Edit log note</div>
+            </a>
+
+        </div>
+
+    </div>
+
+    <!-- home -->
+    <a class="lognotes-index-link" href="/lognotes">
+        <div class="index-link-text">Back to Logs</div>
+    </a>
+
+</body>
+
+</html>
